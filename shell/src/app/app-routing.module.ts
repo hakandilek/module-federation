@@ -10,6 +10,10 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: 'catalog',
+    loadChildren: () => import('catalog/Module').then(m => m.CatalogModule)
+  },
+  {
     path: '**',
     component: NotFoundComponent,
   },
