@@ -1,12 +1,12 @@
 <div style="background-color: bisque;">
   <div>Name: catalog module</div>
-  <div>Count: {{count}}</div>
-  <div>
-    <button
-      (click)="increment()"
-    >
-      Add To Cart
-    </button>
+  <div *ngIf="state$ | async as state">
+    <div>Count: {{state.count}}</div>
+    <div>
+      <button
+        (click)="state.addToCart()"
+      > Add To Cart
+      </button>
+    </div>
   </div>
-
 </div>

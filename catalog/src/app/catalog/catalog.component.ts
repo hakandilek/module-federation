@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { StateService } from '../state/state.service';
+import { State } from '../state/store';
 
 @Component({
   selector: 'app-catalog',
@@ -6,19 +9,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./catalog.component.css']
 })
 export class CatalogComponent implements OnInit {
-  count: number;
+  state$: Observable<State>;
 
-  constructor() {
+  constructor(stateService: StateService) {
     console.log(`catalog: CatalogComponent()`);
-    this.count = 0;
+    this.state$ = stateService.useStore();
   }
 
   ngOnInit(): void {
     console.log(`catalog: CatalogComponent.ngOnInit()`);
-  }
-
-  increment() {
-    this.count++;
   }
 
 }
