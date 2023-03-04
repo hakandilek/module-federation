@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { StateService } from '../state/state.service';
-import { State } from '../state/store';
+import { StoreLoaderService } from './store-loader.service';
+
+declare type State = typeof import('state/Store');
 
 @Component({
   selector: 'app-catalog',
@@ -11,9 +12,9 @@ import { State } from '../state/store';
 export class CatalogComponent implements OnInit {
   state$: Observable<State>;
 
-  constructor(stateService: StateService) {
+  constructor(storeLoader: StoreLoaderService) {
     console.log(`catalog: CatalogComponent()`);
-    this.state$ = stateService.useStore();
+    this.state$ = storeLoader.useStore();
   }
 
   ngOnInit(): void {

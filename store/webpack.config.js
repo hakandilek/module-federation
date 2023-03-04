@@ -2,10 +2,12 @@ const { shareAll, withModuleFederationPlugin } = require('@angular-architects/mo
 
 module.exports = withModuleFederationPlugin({
 
-  name: 'store',
+  name: 'state',
 
   exposes: {
-    './Component': './src/app/app.component.ts',
+    './Service': './src/app/state/state.service.ts',
+    './Module': './src/app/state/state.module.ts',
+    './Store': './src/app/state/store.ts',
   },
 
   shared: {
