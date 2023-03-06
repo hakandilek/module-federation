@@ -30,5 +30,5 @@ This repository contains several showcases about the micro frontend architechtur
   ng serve
   ```
 
-- Access catalog: [](http://localhost:4201/)
-- Access shell: [](http://localhost:4200/)
+- Access catalog: [http://localhost:4201](http://localhost:4201/)
+- Access shell: [http://localhost:4200/](http://localhost:4200/)
