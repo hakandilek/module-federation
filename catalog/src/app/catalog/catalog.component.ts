@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { StateService } from '../state/state.service';
-import { State } from '../state/store';
+import { StateService, State } from 'state-lib';
 
 @Component({
   selector: 'app-catalog',
