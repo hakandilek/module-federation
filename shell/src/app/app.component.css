@@ -34,3 +34,13 @@ li a:hover {
 li img {
   margin: 25% 8px;
 }
+
+li div {
+  display: block;
+  color: white;
+  background-color: #555;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  margin-left: 128px;
+}

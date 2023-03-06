@@ -27,6 +27,7 @@ This repository contains several showcases about the micro frontend architechtur
 - in `./shell` directory:
   ```bash
   npm install
+  npm link state-lib
   ng serve
   ```
 
