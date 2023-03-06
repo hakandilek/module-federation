@@ -11,6 +11,7 @@ module.exports = withModuleFederationPlugin({
 
   shared: {
     ...shareAll({ singleton: true, strictVersion: true, requiredVersion: 'auto' }),
+    'state-lib' : {singleton: true, strictVersion: true}
   },
 
   sharedMappings: ['state-lib'],

@@ -2,6 +2,11 @@
   <li><img src="favicon.ico"></li>
   <li><a routerLink="/">Home</a></li>
   <li><a routerLink="/catalog">Catalog</a></li>
+  <li><div *ngIf="state$ | async as state">Count: {{state.count}}
+    <button
+      (click)="state.resetCart()"
+    > Reset </button>
+  </div></li>
 </ul>
 
 <div>
