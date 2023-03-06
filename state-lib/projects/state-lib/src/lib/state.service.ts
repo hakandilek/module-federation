@@ -10,6 +10,7 @@ export class StateService {
   private store: StoreApi<State>;
 
   constructor() {
+    console.log(`state-service: StateService()`);
     this.store = createStore(initStore() as StateCreator<State>);
   }
 
@@ -22,6 +23,7 @@ export class StateService {
   }
 
   useStore(): Observable<State> {
+    console.log(`state-service: useStore()`);
     return useStore(this.store);
   }
 }
