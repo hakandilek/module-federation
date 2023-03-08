@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { StateService, State } from 'state-lib';
+import { State, getStateStore } from 'state-lib';
 
 @Component({
   selector: 'app-catalog',
@@ -10,9 +10,9 @@ import { StateService, State } from 'state-lib';
 export class CatalogComponent implements OnInit {
   state$: Observable<State>;
 
-  constructor(stateService: StateService) {
+  constructor() {
     console.log(`catalog: CatalogComponent()`);
-    this.state$ = stateService.useStore();
+    this.state$ = getStateStore();
   }
 
   ngOnInit(): void {
@@ -20,3 +20,4 @@ export class CatalogComponent implements OnInit {
   }
 
 }
+

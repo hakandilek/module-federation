@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Observable, map, distinctUntilChanged } from 'rxjs';
-import { createStore, StateCreator, StoreApi } from 'zustand/vanilla';
-import { initStore, State } from './store';
+import { Observable } from 'rxjs';
+import { StoreApi } from 'zustand/vanilla';
+import { State, } from './store';
+import { createStore, useStore } from './store-utils';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class StateService {
 
   constructor() {
     console.log(`state-service: StateService()`);
-    this.store = createStore(initStore() as StateCreator<State>);
+    this.store = createStore()
   }
 
   getState() {
@@ -26,21 +27,4 @@ export class StateService {
     console.log(`state-service: useStore()`);
     return useStore(this.store);
   }
-}
-
-function useStore<T, S>(store: StoreApi<T>, selector?: (state: T) => S) {
-  const state$ = new Observable<T>((subscriber) => {
-    subscriber.next(store.getState());
-    const unsubscribe = store.subscribe((state) => subscriber.next(state));
-    return () => unsubscribe();
-  });
-
-  if (!selector) return state$;
-
-  const slice$ = state$.pipe(
-    map((state) => selector(state)),
-    distinctUntilChanged((prev, current) => prev === current)
-  );
-
-  return slice$;
 }

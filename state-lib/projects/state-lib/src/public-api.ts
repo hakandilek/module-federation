@@ -4,4 +4,5 @@
 
 export * from './lib/state.service';
 export * from './lib/state.module';
-export { State } from './lib/store';
+export * from './lib/store';
+export * from './lib/store-utils';

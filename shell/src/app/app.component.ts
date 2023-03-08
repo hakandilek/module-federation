@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
-import { StateService, State } from 'state-lib';
+import { State, getStateStore } from 'state-lib';
 
 @Component({
   selector: 'app-root',
@@ -11,8 +11,8 @@ export class AppComponent {
   title = 'shell';
   state$: Observable<State>;
 
-  constructor(stateService: StateService) {
+  constructor() {
     console.log(`shell: AppComponent()`);
-    this.state$ = stateService.useStore();
+    this.state$ = getStateStore();
   }
 }

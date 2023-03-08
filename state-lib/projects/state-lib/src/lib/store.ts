@@ -6,7 +6,7 @@ export interface State {
   resetCart: () => void;
 }
 
-export function initStore() {
+export function initStore(): (set: any, get: any) => State {
   return (set: StoreApi<State>['setState'], _get: StoreApi<State>['getState']) => ({
     count: 0,
     addToCart: () => {
