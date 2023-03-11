@@ -10,4 +10,11 @@ const App = () => (
     <div>Language: JavaScript</div>
   </div>
 );
-ReactDOM.render(<App />, document.getElementById("app"));
+
+class ModuleElement extends HTMLElement {
+  connectedCallback() {
+    ReactDOM.render(<App/>, this);
+  }
+}
+
+customElements.define('cart-element', ModuleElement)

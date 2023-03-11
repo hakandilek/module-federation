@@ -24,6 +24,13 @@ This repository contains several showcases about the micro frontend architechtur
   ng serve
   ```
 
+- in `./cart` directory:
+  ```bash
+  npm install
+  npm link state-lib
+  npm run start:live
+  ```
+
 - in `./shell` directory:
   ```bash
   npm install
@@ -32,4 +39,5 @@ This repository contains several showcases about the micro frontend architechtur
   ```
 
 - Access catalog: [http://localhost:4201](http://localhost:4201/)
+- Access cart: [http://localhost:4300/](http://localhost:4300/)
 - Access shell: [http://localhost:4200/](http://localhost:4200/)
