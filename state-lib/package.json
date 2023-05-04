@@ -16,7 +16,7 @@
     "zustand": "^4.3.5"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^15.2.1",
+    "@angular-devkit/build-angular": "^15.2.8",
     "@angular/cli": "~15.2.0",
     "@angular/compiler-cli": "^15.2.0",
     "@types/jasmine": "~4.3.0",
